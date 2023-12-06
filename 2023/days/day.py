@@ -7,6 +7,7 @@ class Day():
         self.ab = ab
         self.test = test
         self.input_lines = self._read_input()
+        self.input_blob = '\n'.join(self.input_lines)
 
     def _read_input(self):
         ab = 'a' if self.reuse_a_input_for_b else self.ab
