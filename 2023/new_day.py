@@ -1,5 +1,5 @@
 import sys, os
-import requests
+# import requests
 
 def writeDayPythonFile(day):
     path = f"days/day{day}.py"
@@ -9,7 +9,7 @@ def writeDayPythonFile(day):
 
     with open(path, 'w') as f:
         f.write(f"""
-                
+
 from days.day import Day
 
 class Day{day}(Day):
