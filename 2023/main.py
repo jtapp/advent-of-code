@@ -12,10 +12,12 @@ if __name__ == "__main__":
             """)
         exit()
 
-    test = len(args) > 1 and args[1].lower() == "test"
+    day = args[0][:-1]
+    ab = args[0][-1]
 
-    (day, ab) = args[0]
+    test = len(args) > 1 and args[1].lower() == "test"
+    test_case = args[2] if (test and len(args) > 2) else None # let you specify a test case, or just default to ie 3a
+
     day_mod = import_module(f"days.day{day}")
-    day = getattr(day_mod, f"Day{day}")(ab, test)
+    day = getattr(day_mod, f"Day{day}")(ab, test, test_case)
     day.solve()
-    
