@@ -37,6 +37,9 @@ class Day8(Day):
             turn_count += 1
         print(current_nodes)
         print(turn_count)
+        # got to
+        # 21,900,000,000 : ['MMR', 'HCG', 'CTN', 'GVC', 'HTK', 'LSX']
+        # 22,000,000,000 : ['FSP', 'XPQ', 'HQV', 'PVT', 'MLL', 'NBL']
 
 
     def solve_b_2(self):
