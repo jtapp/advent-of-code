@@ -11,6 +11,7 @@ def writeDayPythonFile(day):
         f.write(f"""
 
 from days.day import Day
+from time import sleep
 
 class Day{day}(Day):
 
