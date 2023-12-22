@@ -12,6 +12,7 @@ def writeDayPythonFile(day):
 
 from days.day import Day
 from time import sleep
+from pprint import pprint
 
 class Day{day}(Day):
 
