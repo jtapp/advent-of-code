@@ -1,8 +1,7 @@
-use crate::tree::Tree;
+use crate::day8::day8a;
 use std::env;
 use std::fs;
-
-pub mod tree;
+mod day8;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -17,14 +16,18 @@ fn main() {
         .expect("Please provide an integer Day to run");
     let part: char = args[2].parse().expect("Please specify a part 'a' or 'b'");
     match (day, part) {
-        (1, 'a') => day1a(),
+        (8, 'a') => day8a(read_lines(day, false)),
         _ => println!("No implementation found for day {day}{part}"),
     }
 }
 
-fn day1a() {
-    let path = "../inputs/1a.txt";
+fn read_lines(day: u32, test: bool) -> Vec<String> {
+    let path = match test {
+        true => format!("../test_inputs/{day}.txt"),
+        false => format!("../inputs/{day}.txt"),
+    };
+    dbg!(&path);
     let contents = fs::read_to_string(path).expect("Problem reading file");
-    let mut lines = contents.split('\n');
-    dbg!(lines.next());
+    let lines = contents.split('\n').map(|s| s.to_string()).collect();
+    lines
 }
